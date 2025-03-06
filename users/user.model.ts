@@ -1,27 +1,26 @@
-const { DataTypes } = require('sequelize');
+import 'reflect-metadata';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-module.exports = model;
+@Entity()
+export class User {
+  @PrimaryGeneratedColumn()
+  id!: number;
 
-function model(sequelize) {
-    const attributes = {
-        email: { type: DataTypes.STRING, allowNull: false },
-        passwordHash: { type: DataTypes.STRING, allowNull: false },
-        title: { type: DataTypes.STRING, allowNull: false },
-        firstName: { type: DataTypes.STRING, allowNull: false },
-        lastName: { type: DataTypes.STRING, allowNull: false },
-        role: { type: DataTypes.STRING, allowNull: false }
-    };
+  @Column()
+  email!: string;
 
-    const options = {
-        defaultScope: {
-            // exclude password hash by default
-            attributes: { exclude: ['passwordHash'] }
-        },
-        scopes: {
-            // include hash with this scope
-            withHash: { attributes: {} }
-        }
-    };
+  @Column()
+  passwordHash!: string;
 
-    return sequelize.define('User', attributes, options);
+  @Column()
+  title!: string;
+
+  @Column()
+  firstName!: string;
+
+  @Column()
+  lastName!: string;
+
+  @Column()
+  role!: string;
 }
