@@ -1,4 +1,4 @@
-import 'rootpath'; // Or remove if not needed
+
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import { errorHandler } from './_middleware/error-handler';
@@ -25,7 +25,7 @@ AppDataSource.initialize()
     });
 
     // start server
-    const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
+    const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 3000;
     app.listen(port, () => console.log('Server listening on port ' + port));
   })
   .catch((err) => {

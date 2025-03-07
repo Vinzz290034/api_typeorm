@@ -3,25 +3,30 @@
     "version": "1.0.0",
     "license": "MIT",
     "scripts": {
-      "build": "tsc",
-      "clean": "rimraf dist",
-      "start": "node dist/server.js",
-      "start:dev": "nodemon dist/server.js"
+        "build": "tsc",
+        "clean": "rimraf dist",
+        "start:dev": "nodemon",
+        "dev": "npm run start:dev",
+        "migration:run": "typeorm migration:run -d ./_helpers/user.entity.ts"
     },
     "dependencies": {
-      "bcryptjs": "^2.4.3",
-      "cors": "^2.8.5",
-      "express": "^4.17.1",
-      "joi": "^17.2.0",
-      "mysql2": "2.1.0",
-      "rootpath": "^0.1.2",
-      "typeorm": "^0.3.17"
+        "bcrypt": "^5.1.1",
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "joi": "^17.2.0",
+        "mysql2": "^3.13.0",
+        "rootpath": "^0.1.2",
+        "typeorm": "^0.3.17"
     },
     "devDependencies": {
-      "@types/node": "^20.8.7",
-      "nodemon": "^2.0.4",
-      "rimraf": "^5.0.5",
-      "ts-node": "^10.9.1",
-      "typescript": "^5.2.2"
+        "@types/bcrypt": "^5.0.2",
+        "@types/cors": "^2.8.17",
+        "@types/express": "^5.0.0",
+        "@types/node": "^20.8.7",
+        "nodemon": "^2.0.4",
+        "rimraf": "^5.0.5",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
     }
-  }
+}
