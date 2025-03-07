@@ -7,7 +7,7 @@
         "clean": "rimraf dist",
         "start:dev": "nodemon",
         "dev": "npm run start:dev",
-        "migration:run": "typeorm migration:run -d ./_helpers/user.entity.ts"
+        "migration:run": "typeorm migration:run -d ./_helpers/db.ts"
     },
     "dependencies": {
         "bcrypt": "^5.1.1",
